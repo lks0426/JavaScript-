@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration From</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Registration From</h1>
+    <p>Please fill out this from with the required information</p>
+    <form method="post" action="https://register-demo.freecodecamp.org">
+        <fieldset>   <!--段落-->
+            <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required/></label> 
+            <!--
+                <label> 用于关联表单元素
+                <input> 是用户输入的核心元素，type="text" 表示文本输入框。
+                    for 和 id 的匹配确保了点击标签时可以聚焦输入框
+                    name 属性：name="first-name" 是表单提交时发送到服务器的字段名称。
+                required 属性确保输入框是必填项(不填写不能提交表单)。
+            -->
+            <label for="last-name">Enter Your last Name: </label>
+            <input id="last-name" name="last-name" type="text" required/>
+            <label for="email">Enter Your Email: </label>
+            <input id="email" name="email" type="email" required/>
+            <label for="new-password">Create a New Password: </label>
+            <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required/>
+        </fieldset>
+        <fieldset>
+            <legend>Account type (required)</legend>
+            <Label for="personal-Account"><input id="personal-Account" type="radio" name="account-type" class="inline" checked/> Personal</Label>
+              <!-- type表单选按钮 checked是默认选择-->
+            <Label for="business-Account"><input id="business-Account" type="radio" name="account-type" class="inline" /> Business</Label>
+            
+        </fieldset>
+        <fieldset>
+            <label for="profile-picture">Upload a profile picture: </label>
+            <input id="profile-picture" type="file" name="file" />
+            <label for="age">Input Your age (years): </label>
+            <input id="age" type="number" name="age" min="13" max="120" />
+            <label for="referrer">How did you hear about us?</label>
+                <select id="referrer" name="referrer">   <!-- select 定义下拉菜单，option为定义下拉菜单的选项-->
+                    <option value="">(select one)</option>
+                    <option value="1">freeCodeCamp News</option>
+                    <option value="2">freeCodeCamp YouTube Channel</option>
+                    <option value="3">freeCodeCamp Forum</option>
+                    <option value="4">Other</option>
+                </select>
+            </label>
+            <label for="bio">Provide a bio:
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea> 
+                <!-- textarea 定义多行文本输入  placehoider 多行注释内 提示用户输入内容-->
+            </label>
+        </fieldset>
+            <label for="terms-and-conditions">
+                <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+                <!--  type="checkbox" 复选框 本次为单个复选 -->
+            </label>
+        <input type="submit" value="Submit" />
+    </from>
+</body>
+</html>
