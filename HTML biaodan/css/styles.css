@@ -3,9 +3,10 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-  color: #f5f6f7;
+  color: rgb(252, 137, 6);
   font-family: Tahoma;
   font-size: 16px;
+  background-image: url(lvup_2207_kumo_01.jpg);
 }
 
 h1, p {
@@ -24,7 +25,7 @@ form {
 fieldset {
   border: none;
   padding: 2rem 0;
-  border-bottom: 3px solid #3b3b4f;
+  border-bottom: 3px solid #585858;
 }
 
 fieldset:last-of-type {
@@ -45,9 +46,9 @@ select {
 }
 
 input, textarea {
-  background-color: #0a0a23;
-  border: 1px solid #0a0a23;
-  color: #ffffff;
+  background-color: #ffe9b5;
+  border: 1px solid #ffe9b5;
+  color: rgb(252, 137, 6);
 }
 
 .inline {
@@ -62,8 +63,8 @@ input[type="submit"] {
   margin: 1em auto;
   height: 2em;
   font-size: 1.1rem;
-  background-color: #3b3b4f;
-  border-color: white;
+  background-color: #ffe9b5;
+  border-color: rgb(252, 137, 6);
   min-width: 300px;
 }
 
@@ -76,5 +77,21 @@ input[type="file"] {
 }
 
 a,terms and conditions{
-  color: #dfdfe2;
+  color: rgb(252, 137, 6);
+}
+
+table{
+  width: 80%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th,td{
+  border: 1px solid rgb(128, 128, 128);
+  padding: 10px;
+}
+
+th{
+  background-color: #ffe9b5;
+  font-weight: bold;
 }

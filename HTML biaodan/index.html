@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>  <body>
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form method="post" action="https://formsubmit.co/baiyitong8888@gmail.com" enctype="multipart/form-data"'>
+      <fieldset>
+        <label for="first-name">Enter Your First Name: 
+        <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: 
+        <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: 
+        <input id="email" name="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: 
+        <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+        <label for="birth-date">Enter Your Birthdate: 
+        <input id="birth-date" name="birth-date" type="date" required /></label>
+      </fieldset>
+      <fieldset>
+        <legend>Account type (required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business</label>
+      </fieldset>
+      <h2>每周空闲时间表</h2>
+      <table>
+        <tr>
+          <th>时间段</th>
+          <th>周一</th>
+          <th>周二</th>
+          <th>周三</th>
+          <th>周四</th>
+          <th>周五</th>
+          <th>周六</th>
+          <th>周日</th>
+        </tr>
+        <tr>
+          <td>06:00-09:00</td>
+          <td><input type="checkbox" name="availability-monday-morning"></td>
+          <td><input type="checkbox" name="availability-tuesday-morning"></td>
+          <td><input type="checkbox" name="availability-wednesday-morning"></td>
+          <td><input type="checkbox" name="availability-thursday-morning"></td>
+          <td><input type="checkbox" name="availability-friday-morning"></td>
+          <td><input type="checkbox" name="availability-saturday-morning"></td>
+          <td><input type="checkbox" name="availability-sunday-morning"></td>
+        </tr>
+        <tr>
+          <td>09:00-12:00</td>
+          <td><input type="checkbox" name="availability-monday-afternoon"></td>
+          <td><input type="checkbox" name="availability-tuesday-afternoon"></td>
+          <td><input type="checkbox" name="availability-wednesday-afternoon"></td>
+          <td><input type="checkbox" name="availability-thursday-afternoon"></td>
+          <td><input type="checkbox" name="availability-friday-afternoon"></td>
+          <td><input type="checkbox" name="availability-saturday-afternoon"></td>
+          <td><input type="checkbox" name="availability-sunday-afternoon"></td>
+        </tr>
+        <tr>
+          <td>12:00-18:00</td>
+          <td><input type="checkbox" name="availability-monday-evening"></td>
+          <td><input type="checkbox" name="availability-tuesday-evening"></td>
+          <td><input type="checkbox" name="availability-wednesday-evening"></td>
+          <td><input type="checkbox" name="availability-thursday-evening"></td>
+          <td><input type="checkbox" name="availability-friday-evening"></td>
+          <td><input type="checkbox" name="availability-saturday-evening"></td>
+          <td><input type="checkbox" name="availability-sunday-evening"></td>
+        </tr>
+        <tr>
+          <td>18:00-22:00</td>
+          <td><input type="checkbox" name="availability-monday-night"></td>
+          <td><input type="checkbox" name="availability-tuesday-night"></td>
+          <td><input type="checkbox" name="availability-wednesday-night"></td>
+          <td><input type="checkbox" name="availability-thursday-night"></td>
+          <td><input type="checkbox" name="availability-friday-night"></td>
+          <td><input type="checkbox" name="availability-saturday-night"></td>
+          <td><input type="checkbox" name="availability-sunday-night"></td>
+        </tr>
+      </table>
+      <fieldset>
+        <label for="profile-picture">Upload a profile picture: 
+          <input id="profile-picture" type="file" name="file" accept=".jpg, .jepg, .png" required/></label>
+        <label for="age">Input your age (years): 
+          <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">How did you hear about us?
+          <select id="referrer" name="referrer">
+            <option value="">(select one)</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">freeCodeCamp YouTube Channel</option>
+            <option value="3">freeCodeCamp Forum</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        <label for="bio">Provide a bio:
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
+      </fieldset>
+      <label for="terms-and-conditions">
+        <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+      </label>
+      <label>
+        <a href=" https://github.com/lks0426" target="_blank">Visit our GitHub</a>
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
