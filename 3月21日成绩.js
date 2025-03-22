@@ -1,0 +1,42 @@
+function getAverage(scores) {
+    let sum = 0;
+    for (let i = 0; i < scores.length; i++) {
+        sum += scores[i];
+    }
+    return sum / scores.length;
+}
+
+function fenshu(score) {
+    if (score === 100) {
+        return "A++";
+    } else if (score >= 90) {
+        return "A";
+    } else if (score >= 80) {
+        return "B";
+    } else if (score >= 70) {
+        return "C";
+    } else if (score >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+function hasPassingGrade(score) {
+    return score >= 60;
+}
+
+function studentMsg(classScores, studentScore) {
+    let average = getAverage(classScores);
+    let grade = fenshu(studentScore);
+    let message = "Class average: " + average + ". Your grade: " + grade + ". ";
+    if (hasPassingGrade(studentScore)) {
+        message += "You passed the course.";
+    } else {
+        message += "You failed the course.";
+    }
+    return message;
+}
+
+console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
+console.log(getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95]));
