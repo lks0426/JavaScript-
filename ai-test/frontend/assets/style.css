@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    background: #ffeef0;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+  }
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
+  }
+  textarea, input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+  }
+  #output {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    text-align: left;
+    font-family: serif;
+  }

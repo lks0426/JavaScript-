@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 文案写作助手</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <div class="max-w-xl mx-auto mt-8 p-6 bg-white rounded-2xl shadow-xl border">
+    <!-- Logo + 标题 -->
+    <div class="text-center mb-6">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="logo" class="w-14 h-14 mx-auto mb-2">
+      <h1 class="text-2xl font-bold tracking-tight">AI 文案写作助手</h1>
+      <p class="text-sm text-gray-500">让你的每句话都打动人心</p>
+    </div>
+
+    <!-- 表单输入区域 -->
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-semibold">行业</label>
+        <input id="industry" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="如：金融、教育、医疗...">
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">关键词</label>
+        <input id="keywords" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="如：安全、创新、信任...">
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">文风</label>
+        <select id="tone" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+          <option>专业</option>
+          <option>幽默</option>
+          <option>文艺</option>
+          <option>商务</option>
+        </select>
+      </div>
+      <button id="generateBtn" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">生成文案</button>
+    </div>
+
+    <!-- 生成结果展示 -->
+    <div id="resultBox" class="mt-6 p-4 border border-blue-200 rounded-lg bg-blue-50 hidden">
+      <h2 class="font-semibold text-blue-700 mb-2">生成结果：</h2>
+      <p id="resultText" ></p>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("generateBtn");
+    const resultBox = document.getElementById("resultBox");
+    const resultText = document.getElementById("resultText");
+
+    btn.onclick = async () => {
+      const industry = document.getElementById("industry").value.trim();
+      const keywords = document.getElementById("keywords").value.trim();
+      const tone = document.getElementById("tone").value;
+
+      if (!industry || !keywords) return alert("请输入行业和关键词");
+
+      btn.innerText = "生成中...";
+      btn.disabled = true;
+      resultBox.classList.add("hidden");
+
+      try {
+        const res = await fetch("http://localhost:3000/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ industry, keywords, tone })
+        });
+
+        const data = await res.json();
+        resultText.innerText = data.result || "生成失败";
+        resultBox.classList.remove("hidden");
+      } catch (err) {
+        alert("请求失败，请检查后端服务是否正常。");
+      } finally {
+        btn.innerText = "生成文案";
+        btn.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>
